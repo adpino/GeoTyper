@@ -1,8 +1,12 @@
-#toBeTyped {
+#allText {
 	border: 3px solid gray;
 	margin: 10% 0;
 	background-color: #dae7f1;
 	font-size: 20px;
+}
+
+#toBeTyped {
+	
 }
 
 body {
@@ -23,3 +27,4 @@ input {
 .error {
 	background-color: #ff1a1a; 
 }
+

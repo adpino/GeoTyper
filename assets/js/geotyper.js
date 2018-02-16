@@ -1,17 +1,21 @@
 var toBeTyped = $("#toBeTyped").text();
+var completed = ""
 
 //$("input").keypress(function (e) {
-$("input").keydown(function (e) {
+$("input").keypress(function (e) {
     var c = String.fromCharCode(e.which);
-    console.log(c)
+    // console.log(c)
     //process the single character or
     //console.log(c);
 
     if (c == toBeTyped.charAt(0) || (c ==  toBeTyped.charAt(1) && toBeTyped.charAt(0) == "\n")) {
     	$(this).removeClass("error");
     	toBeTyped = toBeTyped.substr(1);
-    	$("#completed").append(c);
-    	$("#toBeTyped").text(toBeTyped); 
+    	completed += c;
+    	//console.log(completed);
+    	//$("#completed").text(completed);
+    	// console.log($("#completed").text())
+    	 $("#toBeTyped").text(toBeTyped); // this line messes up span
     	if (toBeTyped.charAt(0) == "\n") {
     		toBeTyped = toBeTyped.substr(1);
     	}
@@ -23,11 +27,10 @@ $("input").keydown(function (e) {
     	if (c == " ") {
     		$(this).val("")
     	}
-
+    	$("#completed").text(completed);
+    	console.log($("#completed").text())
     	//console.log(toBeTyped);
     	//console.log(toBeTyped.charAt(0))
-    } else if (e.keyCode === 8) {
-    	console.log("BACKSPACE 2")
     } else {
     	$(this).addClass("error");
     }
@@ -38,6 +41,12 @@ $("input").keydown(function (e) {
     //process the full text
     
 });
+
+$("input").keydown(function (e) {
+	if (e.keyCode === 8) {	
+    	console.log("BACKSPACE")
+    } 
+});;
 
 $("#toBeTyped").on("click", function(event) {
 	console.log($(this).text());
