@@ -14,3 +14,7 @@ input {
 	width: 100%;
 	font-size: 25px;
 }
+
+#completed {
+	color: #4d6619;
+}
