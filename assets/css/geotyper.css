@@ -13,8 +13,13 @@ input {
 	height: 45px;
 	width: 100%;
 	font-size: 25px;
+	color: dimgray;
 }
 
 #completed {
-	color: #4d6619;
+	color: #4d4d4d;
+}
+
+.error {
+	background-color: #ff1a1a; 
 }
