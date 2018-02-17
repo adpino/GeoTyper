@@ -4,6 +4,8 @@ toBeTyped = toBeTyped.replace(/\n/g, " ");
 var words = toBeTyped.split(" ");
 
 // Fix bug that typing correct characters after incorrect characters removes from toBeTyped. Use queue to keep track of wrong characters and check when empty and && to if below that queue is empty
+// Change backspace so that checks if a lot has been deleted also fix input so that correctness is not based on the single character input but just checks the text box
+// Have code to update span based on text box. Maybe use another span for curr word being typed
 
 $("input").keypress(function (e) {
     var c = String.fromCharCode(e.which);

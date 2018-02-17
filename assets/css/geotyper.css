@@ -21,7 +21,8 @@ input {
 }
 
 #completed {
-	color:	#239023;
+	color:	white;
+	background-color: #239023; 
 }
 
 .error {
