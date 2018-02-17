@@ -3,6 +3,8 @@ var completed = "";
 toBeTyped = toBeTyped.replace(/\n/g, " ");
 var words = toBeTyped.split(" ");
 
+// Fix bug that typing correct characters after incorrect characters removes from toBeTyped. Use queue to keep track of wrong characters and check when empty and && to if below that queue is empty
+
 $("input").keypress(function (e) {
     var c = String.fromCharCode(e.which);
   
