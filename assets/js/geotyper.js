@@ -1,11 +1,4 @@
-// var toBeTyped = $("#toBeTyped").text();
-// var completed = "";
-// toBeTyped = toBeTyped.replace(/\n/g, " ");
-// var words = toBeTyped.split(" ");
-// var curr = words[0];
-// toBeTyped = toBeTyped.substr(curr.length);
-
-var res;
+var res, start, end, steps = [], curr_step = 0, toBeTyped, completed, words, currs;
 
 $.ajaxSetup({
     async: false
@@ -22,20 +15,19 @@ $.getJSON(directionsAPI, {
 	console.log(result.routes[0].legs[0].steps);
 	console.log(result.routes[0].legs[0].steps[0].html_instructions);
 	res = result.routes[0].legs[0].steps[0].html_instructions;
+	start = result.routes[0].legs[0].start_address;
+	end = result.routes[0].legs[0].end_address;
+	result.routes[0].legs[0].steps.forEach(function(element) {
+		steps.push(element.html_instructions.replace(/(<b>|<\/b>)/g, ""));
+	});
 });
 
 $.ajaxSetup({
     async: true
 });
-res = res.replace(/(<b>|<\/b>)/g, "");
+$("#path").text("From: " + start + " To: " + end);
 
-$("#toBeTyped").html(res);
-var toBeTyped = $("#toBeTyped").text();
-var completed = "";
-toBeTyped = toBeTyped.replace(/\n/g, " ");
-var words = toBeTyped.split(" ");
-var curr = words[0];
-toBeTyped = toBeTyped.substr(curr.length);
+changeText(steps[curr_step]);
 
 $("input").bind("input", function() {
 	var input = $(this).val();
@@ -51,12 +43,24 @@ $("input").bind("input", function() {
 		$("input").val("");
 		$("#completed").text($("#completed").text() + " " + $("#curr").text() + " ");
 		$("#curr").text("");
-		toBeTyped = toBeTyped.substr(words[0].length + 1)
+		if (words.length == 0) {
+			curr_step++;
+			changeText(steps[curr_step]);
+		} else {
+			toBeTyped = toBeTyped.substr(words[0].length + 1);
+		}
 	} else {
 		$(this).addClass("error");
 	}
 });
 
-$("#toBeTyped").on("click", function(event) {
-	console.log($(this).text());
-}); 
+function changeText(step) {
+	$("#toBeTyped").html(steps[curr_step]);
+	toBeTyped = $("#toBeTyped").text();
+	completed = "";
+	toBeTyped = toBeTyped.replace(/\n/g, " ");
+	words = toBeTyped.split(" ");
+	curr = words[0];
+	toBeTyped = toBeTyped.substr(curr.length);
+	$("#completed").text("");
+}
