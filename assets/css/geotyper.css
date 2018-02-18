@@ -5,10 +5,6 @@
 	font-size: 20px;
 }
 
-#toBeTyped {
-	
-}
-
 body {
 	margin: 20%;
 }	
@@ -35,5 +31,5 @@ input {
 }
 
 div {
-	line-height: 22px;
+		line-height: 22px;
 }
