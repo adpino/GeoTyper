@@ -1,36 +1,3 @@
-/*#allText {
-	border: 3px solid gray;
-	margin: 10% 0;
-	background-color: #dae7f1;
-	font-size: 20px;
-}
-
-#toBeTyped {
-	
-}
-
-body {
-	margin: 20%;	
-}
-
-input {
-	height: 45px;
-	width: 100%;
-	font-size: 25px;
-	color: dimgray;
-}
-
-#completed {
-	color:	white;
-	background-color: #239023; 
-}
-
-.error {
-	background-color: #ff1a1a; 
-}
-
-*/
-
 #allText {
 	border: 3px solid gray;
 	margin: 10% 0;
@@ -43,8 +10,8 @@ input {
 }
 
 body {
-	margin: 20%;	
-}
+	margin: 20%;
+}	
 
 input {
 	height: 45px;
@@ -67,6 +34,6 @@ input {
 	background-color: #ff1a1a; 
 }
 
-span {
-	
+div {
+	line-height: 22px;
 }
