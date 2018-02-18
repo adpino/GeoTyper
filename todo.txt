@@ -1,3 +1,2 @@
-Pick two locations to be used for initial development
-Get directions from Google Maps API and add to div
 Change two map points so that they are from two random points
+Add Google Maps streetview to visualize the directions being typed
