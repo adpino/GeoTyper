@@ -1,4 +1,4 @@
-#allText {
+/*#allText {
 	border: 3px solid gray;
 	margin: 10% 0;
 	background-color: #dae7f1;
@@ -29,3 +29,44 @@ input {
 	background-color: #ff1a1a; 
 }
 
+*/
+
+#allText {
+	border: 3px solid gray;
+	margin: 10% 0;
+	background-color: #dae7f1;
+	font-size: 20px;
+}
+
+#toBeTyped {
+	
+}
+
+body {
+	margin: 20%;	
+}
+
+input {
+	height: 45px;
+	width: 100%;
+	font-size: 25px;
+	color: dimgray;
+}
+
+.correct {
+	color:	white;
+	background-color: #239023; 
+}
+
+#completed {
+	color:	white;
+	background-color: #239023; 
+}
+
+.error {
+	background-color: #ff1a1a; 
+}
+
+span {
+	
+}
